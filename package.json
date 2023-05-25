@@ -21,7 +21,8 @@
   "type": "module",
   "homepage": "https://github.com/ElenaNek/frontend-project-46#readme",
   "dependencies": {
-    "commander": "^10.0.1"
+    "commander": "^10.0.1",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "eslint": "^8.40.0",
