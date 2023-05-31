@@ -4,6 +4,6 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/770517411395492883b9/maintainability)](https://codeclimate.com/github/ElenaNek/frontend-project-46/maintainability)
 
-[![ESLint](https://github.com/ElenaNek/frontend-project-46/actions/workflows/eslint.yml/badge.svg)](https://github.com/ElenaNek/frontend-project-46/actions/workflows/eslint.yml)
+[![Jest](https://github.com/ElenaNek/frontend-project-46/actions/workflows/jest.yml/badge.svg)](https://github.com/ElenaNek/frontend-project-46/actions/workflows/jest.yml)
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/770517411395492883b9/test_coverage)](https://codeclimate.com/github/ElenaNek/frontend-project-46/test_coverage)
