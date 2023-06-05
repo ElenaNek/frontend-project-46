@@ -3,13 +3,17 @@ import fs from 'node:fs';
 import * as path from 'path';
 import _ from 'lodash';
 import { type } from 'node:os';
+import parse from './parsers.js';
 
 export default (path1, path2) => {
   const fileContent1 = fs.readFileSync(path.resolve(process.cwd(), path1));
   const fileContent2 = fs.readFileSync(path.resolve(process.cwd(), path2));
 
-  const data1 = JSON.parse(fileContent1);
-  const data2 = JSON.parse(fileContent2);
+  const fileExtension1 = path.extname(path1).slice(1);
+  const fileExtension2 = path.extname(path2).slice(1);
+
+  const data1 = parse(fileContent1, fileExtension1);
+  const data2 = parse(fileContent2, fileExtension2);
 
   const keys1 = Object.keys(data1);
   const keys2 = Object.keys(data2);

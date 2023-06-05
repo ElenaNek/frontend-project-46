@@ -1,0 +1,5 @@
+es6: false
+
+ecmaVersion: 2020
+
+runs-on: ubuntu-latest
