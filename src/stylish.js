@@ -27,8 +27,7 @@ const stylish = (tree) => {
     const indent = getIndent(depth).slice(0, -2);
     const bracketIndent = getBracketIndent(depth);
     const lines = node.map((item) => {
-      const { type } = item;
-      switch (type) {
+      switch (item.type) {
         case 'nested':
           return `${indent}  ${item.key}: ${iter(item.children, depth + 1)}`;
         case 'added':
