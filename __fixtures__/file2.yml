@@ -2,7 +2,7 @@
 common:
   follow: false
   setting1: Value 1
-  setting3:
+  setting3: null
   setting4: blah blah
   setting5:
     key5: value5
@@ -11,13 +11,6 @@ common:
     ops: vops
     doge:
       wow: so much
-  setting7:
-  - 1
-  - 2
-  - 3
-  - 4
-group0:
-  qwe: 123
 group1:
   foo: bar
   baz: bars
