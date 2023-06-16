@@ -1,9 +1,7 @@
 import _ from 'lodash';
 
 const makeTree = (obj1, obj2) => {
-  const keys1 = Object.keys(obj1);
-  const keys2 = Object.keys(obj2);
-  const sortedKeys = _.sortBy(_.union(keys1, keys2));
+  const sortedKeys = _.sortBy(_.union(Object.keys(obj1), Object.keys(obj2)));
 
   return sortedKeys.map((key) => {
     if (!Object.hasOwn(obj1, key)) {
