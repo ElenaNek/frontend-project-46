@@ -5,7 +5,7 @@ const makeTree = (obj1, obj2) => {
   const keys2 = Object.keys(obj2);
   const sortedKeys = _.sortBy(_.union(keys1, keys2));
 
-  const buildTree = sortedKeys.map((key) => {
+  return sortedKeys.map((key) => {
     if (!Object.hasOwn(obj1, key)) {
       return { key, value: obj2[key], type: 'added' };
     }
@@ -25,7 +25,6 @@ const makeTree = (obj1, obj2) => {
     }
     return { key, value: obj1[key], type: 'unchanged' };
   });
-  return buildTree;
 };
 
 export default makeTree;
