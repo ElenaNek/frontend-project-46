@@ -11,7 +11,7 @@ program
   .argument('<filepath1>', 'path to file1')
   .argument('<filepath2>', 'path to file2')
   .action((filepath1, filepath2) => {
-    console.log(fileDiff(filepath1, filepath2));
+    console.log(fileDiff(filepath1, filepath2, program.opts().format));
   });
 
 program.parse();

@@ -1,7 +1,0 @@
-es6: true
-
-ecmaVersion: 2020
-
-name: Run eslint scanning
-
-runs-on: ubuntu-latest

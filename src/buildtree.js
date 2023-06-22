@@ -14,30 +14,19 @@ const makeTree = (obj1, obj2) => {
     if (_.isPlainObject(obj1[key]) && _.isPlainObject(obj2[key])) {
       return { key, children: makeTree(obj1[key], obj2[key]), type: 'nested' };
     }
-    if (_.has(obj1, key) && _.has(obj2, key)) {
-      if (!_.isEqual(obj1[key], obj2[key])) {
-        return {
-          key, valueOld: obj1[key], valueNew: obj2[key], type: 'changed',
-        };
-      }
-      return { key, value: obj1[key], type: 'unchanged' };
+    if (!Object.hasOwn(obj1, key)) {
+      return { key, value: obj2[key], type: 'added' };
     }
-    if (_.has(obj1, key) && !_.has(obj2, key)) {
+    if (!Object.hasOwn(obj2, key)) {
       return { key, value: obj1[key], type: 'deleted' };
     }
-    return { key, value: obj2[key], type: 'added' };
+    if (!_.isEqual(obj1[key], obj2[key])) {
+      return {
+        key, valueOld: obj1[key], valueNew: obj2[key], type: 'changed',
+      };
+    }
+    return { key, value: obj1[key], type: 'unchanged' };
   });
 };
 
 export default makeTree;
-// if (!Object.hasOwn(obj1, key)) {
-//   return { key, value: obj2[key], type: 'added' };
-// }
-// if (!Object.hasOwn(obj2, key)) {
-//   return { key, value: obj1[key], type: 'deleted' };
-// if (!_.isEqual(obj1[key], obj2[key])) {
-//   return {
-//     key, valueOld: obj1[key], valueNew: obj2[key], type: 'changed',
-//   };
-// }
-// return { key, value: obj1[key], type: 'unchanged' };

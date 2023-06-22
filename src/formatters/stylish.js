@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const getIndent = (depth, replacer = ' ', spaceCount = 4) => replacer.repeat(depth * spaceCount);
+const getIndent = (depth, replacer = ' ', spacesCount = 4) => replacer.repeat(depth * spacesCount);
 
 const stringify = (value, depth) => {
   if (!_.isObject(value)) {
@@ -24,7 +24,7 @@ const stringify = (value, depth) => {
 const stylish = (tree, depth = 1) => {
   const indent = getIndent(depth).slice(0, -2);
   const bracketIndent = getIndent(depth - 1);
-  const lines = tree.flatMap((item) => {
+  const lines = tree.map((item) => {
     switch (item.type) {
       case 'nested':
         return `${indent}  ${item.key}: ${stylish(item.children, depth + 1)}`;

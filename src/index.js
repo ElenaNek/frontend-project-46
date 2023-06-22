@@ -2,10 +2,10 @@ import process from 'node:process';
 import fs from 'node:fs';
 import * as path from 'path';
 import parse from './parsers.js';
-import stylish from './stylish.js';
+import format from './formatters/index.js';
 import makeTree from './buildtree.js';
 
-export default (path1, path2) => {
+export default (path1, path2, formatName = 'stylish') => {
   const fileContent1 = fs.readFileSync(path.resolve(process.cwd(), path1));
   const fileContent2 = fs.readFileSync(path.resolve(process.cwd(), path2));
 
@@ -16,5 +16,5 @@ export default (path1, path2) => {
   const data2 = parse(fileContent2, fileExtension2);
 
   const tree = makeTree(data1, data2);
-  return stylish(tree);
+  return format(tree, formatName);
 };
