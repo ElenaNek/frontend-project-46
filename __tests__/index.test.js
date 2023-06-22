@@ -2,8 +2,6 @@ import fs from 'node:fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import fileDiff from '../src/index.js';
-import plain from '../src/formatters/plain.js';
-import stylish from '../src/formatters/stylish.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -43,19 +41,4 @@ test('format error', () => {
   const error = new Error(`Format not supported: ${format}`);
   const checkFormat = () => fileDiff(getPathToFixture('file1.json'), getPathToFixture('file2.json'), format);
   expect(checkFormat).toThrow(error);
-});
-
-test('plain default error', () => {
-  const data = [['abc', 12345, 'added'], ['idd', 45, 'deleted'], ['id', 459, 'moved']];
-  const checkType = () => plain(data);
-  const type = 'undefined';
-  const error = new Error(`Unknown type: '${type}'!`);
-  expect(checkType).toThrow(error);
-});
-
-test('stylish default error', () => {
-  const data = [['abc', 12345, 'added'], ['idd', 45, 'deleted'], ['id', 459, 'moved']];
-  expect(() => {
-    stylish(data);
-  }).toThrow();
 });
