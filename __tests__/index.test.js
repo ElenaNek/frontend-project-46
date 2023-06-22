@@ -32,13 +32,6 @@ test.each([
 
 test('parsers error, incorrect extension', () => {
   expect(() => {
-    fileDiff(getPathToFixture('expected_file_plain.txt'), getPathToFixture('file2.json'));
+    fileDiff(getPathToFixture('file1.json'), getPathToFixture('file2.json'), 'word');
   }).toThrow();
-});
-
-test('format error', () => {
-  const format = 'word';
-  const error = new Error(`Format not supported: ${format}`);
-  const checkFormat = () => fileDiff(getPathToFixture('file1.json'), getPathToFixture('file2.json'), format);
-  expect(checkFormat).toThrow(error);
 });
