@@ -1,7 +1,9 @@
-import fs from 'node:fs';
+import { fs } from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import fileDiff from '../src/index.js';
+import plain from '../src/formatters/plain.js';
+import stylish from '../src/formatters/stylish.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -33,5 +35,19 @@ test.each([
 test('parsers error, incorrect extension', () => {
   expect(() => {
     fileDiff(getPathToFixture('file1.json'), getPathToFixture('file2.json'), 'word');
+  }).toThrow();
+});
+
+test('plain default error', () => {
+  const data = getPathToFixture('file3.txt');
+  expect(() => {
+    plain(data);
+  }).toThrow();
+});
+
+test('stylish default error', () => {
+  const data = getPathToFixture('file3.txt');
+  expect(() => {
+    stylish(data);
   }).toThrow();
 });
