@@ -8,7 +8,7 @@ const parse = (data, format) => {
     case 'yml':
       return yaml.load(data);
     default:
-      throw new Error('Incorrect extension');
+      throw new Error('Incorrect extension - ${format}');
   }
 };
 

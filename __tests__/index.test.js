@@ -1,4 +1,4 @@
-import { fs } from 'fs';
+import { readFileSync } from 'node:fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 import fileDiff from '../src/index.js';
@@ -16,7 +16,7 @@ test.each([
   ['file1.json', 'file2.json', 'expected_file_json.json', 'json'],
 ])('diff json format %s, %s', (file1, file2, expected, format) => {
   const data1 = fileDiff(getPathToFixture(file1), getPathToFixture(file2), format);
-  const result1 = fs.readFileSync(getPathToFixture(expected), {
+  const result1 = readFileSync(getPathToFixture(expected), {
     encoding: 'utf-8',
   });
   expect(data1).toEqual(result1);
@@ -30,7 +30,7 @@ test.each([
   ['file1.yml', 'file2.yml', 'expected_file_json.json', 'json'],
 ])('diff yml/yaml format %s, %s', (file1, file2, expected, format) => {
   const data1 = fileDiff(getPathToFixture(file1), getPathToFixture(file2), format);
-  const result1 = fs.readFileSync(getPathToFixture(expected), { encoding: 'utf-8' });
+  const result1 = readFileSync(getPathToFixture(expected), { encoding: 'utf-8' });
   expect(data1).toEqual(result1);
 });
 
@@ -38,6 +38,26 @@ test('parsers error, incorrect extension', () => {
   expect(() => {
     fileDiff(getPathToFixture('file1.json'), getPathToFixture('file2.json'), 'word');
   }).toThrow();
+});
+
+test('parser yml', () => {
+  const file1 = getPathToFixture('file1.yml');
+  const file2 = getPathToFixture('file2.yml');
+
+  expect(genDiff(file1, file2)).toEqual('expected_file_stylish.txt');
+});
+
+
+test('parser error', () => {
+  const file1 = getPathToFixture('file1.json');
+  const file2 = getPathToFixture('file3.txt');
+
+  const format = '.txt';
+
+  const checkParse = () => fileDiff(file1, file2);
+  const error = new Error(`Incorrect extension - ${format}`);
+
+  expect(checkParse).toThrow(error);
 });
 
 test('plain default error', () => {
