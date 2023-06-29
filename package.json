@@ -1,43 +1,35 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/ElenaNek/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/ElenaNek/frontend-project-46/actions)",
+  "type": "module",
+  "description": "Difference calculator is a program that perceives the difference between two data structures.",
   "main": "src/index.js",
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
   "scripts": {
-    "test": "npx jest",
-    "test:coverage": "npx jest --coverage"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ElenaNek/frontend-project-46.git"
   },
-  "author": "",
+  "author": "Elena Nekrasova",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ElenaNek/frontend-project-46/issues"
   },
-  "type": "module",
   "homepage": "https://github.com/ElenaNek/frontend-project-46#readme",
   "dependencies": {
-    "commander": "^10.0.1",
+    "@jest/globals": "^29.5.0",
+    "commander": "^11.0.0",
     "js-yaml": "^4.1.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "eslint": "^8.40.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jest": "^27.2.1",
-    "jest": "^23.6.0"
-  },
-  "jest": {
-    "collectCoverage": true,
-    "coverageReporters": [
-      "json",
-      "html"
-    ]
+    "eslint": "^8.43.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "jest": "^29.5.0"
   }
 }
