@@ -26,7 +26,7 @@ Utility capabilities:
 
 - Git client
 - Node.js 18 or higher
-- Make
+- *.nix OS
 
 ## Setup
 
@@ -37,6 +37,9 @@ git clone
 * Install the package (may require sudo)
 ```bash
 make install
+```
+```
+$ make link
 ```
 * Display help information on utility
 ```bash

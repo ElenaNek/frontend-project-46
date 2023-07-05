@@ -25,7 +25,7 @@ Read this in other languages: Russian | [English](./Readme_english.md)
 
 - Git клиент
 - Node.js 18 или выше
-- Make
+- *.nix OS
 
 ## Установка
 
@@ -36,6 +36,9 @@ $ git clone
 * Установить пакет(может потребоваться sudo)
 ```
 $ make install
+```
+```
+$ make link
 ```
 * Вывод справочной информации по утилите
 ```

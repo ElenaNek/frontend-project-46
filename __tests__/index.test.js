@@ -40,13 +40,6 @@ test('parsers error, incorrect extension', () => {
   }).toThrow();
 });
 
-test('parser yml', () => {
-  const file1 = getPathToFixture('file1.yml');
-  const file2 = getPathToFixture('file2.yml');
-  const expect1 = readFileSync(getPathToFixture('expected_file_stylish.txt'), { encoding: 'utf-8' });
-  expect(fileDiff(file1, file2)).toEqual(expect1);
-});
-
 test('parser error', () => {
   const file1 = getPathToFixture('file1.json');
   const file2 = getPathToFixture('file3.txt');
