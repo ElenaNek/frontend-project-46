@@ -31,30 +31,37 @@ Utility capabilities:
 ## Setup
 
 ## Clone the project
-```
+```bash
 git clone 
 ```
 * Install the package (may require sudo)
-```
+```bash
 make setup
 ```
+
+## Display help information on utility
+
+```bash
+gendiff -h 
+```
+
 ## Example usage
 
-#### Comparison of flat files (JSON)
+#### Difference in json format (plain)
 
 ```
 gendiff filePath1.json filePath2.json
 ```
 [![asciicast](https://asciinema.org/a/jAv7G1Hn11IcyjuYxI00mwZAk.svg)](https://asciinema.org/a/jAv7G1Hn11IcyjuYxI00mwZAk)
 
-### Comparison of flat files (yaml)
+### Comparison of plain files (yaml)
 
 ```
 gendiff filePath1.yml filePath2.yml
 ```
 [![asciicast](https://asciinema.org/a/0bmqrDT9pCYRbNj284qxCwiKi.svg)](https://asciinema.org/a/0bmqrDT9pCYRbNj284qxCwiKi)
 
-### Recursive comparison
+### Recursive comparison (json or yaml/yml)
 
 Since the format stylish is applied by default, you can use two variants of the command:
 
@@ -68,7 +75,8 @@ gendiff --format stylish __fixtures__/file1.json __fixtures__/file2.json
 ```
 [![asciicast](https://asciinema.org/a/SAMik7yxlNvhpGrdJQwUQz0Nh.svg)](https://asciinema.org/a/SAMik7yxlNvhpGrdJQwUQz0Nh)
 
-### Flat output format
+### yml/yaml files difference in plain format
+(you can compare json files in plain format the same way)
 
 ```
 gendiff -f plain __fixtures__/file1.yml __fixtures__/file2.yml
