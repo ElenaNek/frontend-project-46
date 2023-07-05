@@ -35,11 +35,9 @@ $ git clone
 ```
 * Установить пакет(может потребоваться sudo)
 ```
-$ make setup
+$ make install
 ```
-
-## Вывод справочной информации по утилите
-
+* Вывод справочной информации по утилите
 ```bash
 gendiff -h 
 ```
@@ -51,7 +49,7 @@ gendiff -h
 ```
 $ gendiff filePath1.json filePath2.json
 ```
-[![asciicast](https://asciinema.org/a/jAv7G1Hn11IcyjuYxI00mwZAk.svg)](https://asciinema.org/a/jAv7G1Hn11IcyjuYxI00mwZAk)
+[![asciicast](https://asciinema.org/a/o7cf7jE4di4fkPTnT3sotMjc2.svg)](https://asciinema.org/a/o7cf7jE4di4fkPTnT3sotMjc2)
 
 ### Сравнение плоских файлов (yaml)
 

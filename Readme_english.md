@@ -30,17 +30,15 @@ Utility capabilities:
 
 ## Setup
 
-## Clone the project
+*  Clone the project
 ```bash
 git clone 
 ```
 * Install the package (may require sudo)
 ```bash
-make setup
+make install
 ```
-
-## Display help information on utility
-
+* Display help information on utility
 ```bash
 gendiff -h 
 ```
@@ -52,7 +50,7 @@ gendiff -h
 ```
 gendiff filePath1.json filePath2.json
 ```
-[![asciicast](https://asciinema.org/a/jAv7G1Hn11IcyjuYxI00mwZAk.svg)](https://asciinema.org/a/jAv7G1Hn11IcyjuYxI00mwZAk)
+[![asciicast](https://asciinema.org/a/o7cf7jE4di4fkPTnT3sotMjc2.svg)](https://asciinema.org/a/o7cf7jE4di4fkPTnT3sotMjc2)
 
 ### Comparison of plain files (yaml)
 
