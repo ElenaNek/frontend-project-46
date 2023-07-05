@@ -38,8 +38,8 @@ git clone
 ```bash
 make install
 ```
-```
-$ make link
+```bash
+make link
 ```
 * Display help information on utility
 ```bash
